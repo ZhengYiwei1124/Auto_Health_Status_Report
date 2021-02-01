@@ -28,4 +28,5 @@ jobs:
           pip install -r requirement.txt
 
       - name: Run report script
-        run: echo Hello, world!
+        run: |
+          python test.py arg1 arg2 arg3
