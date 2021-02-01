@@ -30,11 +30,11 @@ jobs:
 
       - name: Run report script
         env:
-          daka_uid = ${{ secrets.daka_uid }}
-          daka_pwd = ${{ secrets.daka_pwd }}
-          sender_email = ${{ secrets.sender_email }}
-          sender_pwd = ${{ secrets.sender_pwd }}
-          receiver_email = ${{ secrets.receiver_email }}
+          DAKA_UID = ${{ secrets.DAKA_UID }}
+          DAKA_PWD = ${{ secrets.DAKA_PWD }}
+          SENDER_EMAIL = ${{ secrets.SENDER_EMAIL }}
+          SENDER_PWD = ${{ secrets.SENDER_PWD }}
+          RECEIVER_EMAIL = ${{ secrets.RECEIVER_EMAIL }}
         run: |
-          python main.py "$daka_uid" "$daka_pwd" "$sender_email" "$sender_pwd" "$receiver_email"
+          python main.py "$DAKA_UIDdaka_uid" "$DAKA_PWD" "$SENDER_EMAIL" "$SENDER_PWD" "$RECEIVER_EMAIL"
           echo "success!"
