@@ -9,7 +9,7 @@ on:
       - main
       - auto_report
   schedule:
-    - cron: '55 6 * * *' # 时间设置用的是UTC时间，需要北京时间往前推8个小时
+    - cron: '50 8 * * *' # 时间设置用的是UTC时间，需要北京时间往前推8个小时
 
 jobs:
   build:
@@ -29,5 +29,12 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run report script
+        env:
+          daka_uid = ${{ secrets.daka_uid }}
+          daka_pwd = ${{ secrets.daka_pwd }}
+          sender_email = ${{ secrets.sender_email }}
+          sender_pwd = ${{ secrets.sender_pwd }}
+          receiver_email = ${{ secrets.receiver_email }}
         run: |
-          python test.py arg1 arg2 arg3
+          python main.py "$daka_uid" "$daka_pwd" "$sender_email" "$sender_pwd" "$receiver_email"
+          echo "success!"
