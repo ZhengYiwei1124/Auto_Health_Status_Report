@@ -1,15 +1,12 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Auto_Health_Status_Reprot Action
 
-# Controls when the action will run. 
 on:
   push:
     branches:
       - main
       - auto_report
   schedule:
-    - cron: '5 9 * * *' # 时间设置用的是UTC时间，需要北京时间往前推8个小时
+    - cron: '20 9 * * *'
 
 jobs:
   build:
@@ -36,5 +33,5 @@ jobs:
           SENDER_PWD: ${{ secrets.SENDER_PWD }}
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
         run: |
-          python main.py "$DAKA_UIDdaka_uid" "$DAKA_PWD" "$SENDER_EMAIL" "$SENDER_PWD" "$RECEIVER_EMAIL"
+          python main.py "$DAKA_UID" "$DAKA_PWD" "$SENDER_EMAIL" "$SENDER_PWD" "$RECEIVER_EMAIL"
           echo "success!"
