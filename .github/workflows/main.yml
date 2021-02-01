@@ -9,7 +9,7 @@ on:
       - main
       - auto_report
   schedule:
-    - cron: '50 8 * * *' # 时间设置用的是UTC时间，需要北京时间往前推8个小时
+    - cron: '5 9 * * *' # 时间设置用的是UTC时间，需要北京时间往前推8个小时
 
 jobs:
   build:
@@ -30,11 +30,11 @@ jobs:
 
       - name: Run report script
         env:
-          DAKA_UID = ${{ secrets.DAKA_UID }}
-          DAKA_PWD = ${{ secrets.DAKA_PWD }}
-          SENDER_EMAIL = ${{ secrets.SENDER_EMAIL }}
-          SENDER_PWD = ${{ secrets.SENDER_PWD }}
-          RECEIVER_EMAIL = ${{ secrets.RECEIVER_EMAIL }}
+          DAKA_UID: ${{ secrets.DAKA_UID }}
+          DAKA_PWD: ${{ secrets.DAKA_PWD }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PWD: ${{ secrets.SENDER_PWD }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
         run: |
           python main.py "$DAKA_UIDdaka_uid" "$DAKA_PWD" "$SENDER_EMAIL" "$SENDER_PWD" "$RECEIVER_EMAIL"
           echo "success!"
