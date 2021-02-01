@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - main
+      - auto_report
   schedule:
     - cron: '55 6 * * *' # 时间设置用的是UTC时间，需要北京时间往前推8个小时
 
