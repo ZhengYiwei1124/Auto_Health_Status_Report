@@ -25,7 +25,7 @@ def send(content):
         msg = MIMEMultipart()
 
         # 设置邮件主题、发件人、收件人、邮件内容
-        msg['Subject'] = Header('找回密码', 'utf-8').encode()
+        msg['Subject'] = Header('每日打卡提醒', 'utf-8').encode()
         msg['From'] = email.mail_from
         msg['To'] = email.mail_to
         text = MIMEText(content, 'plain', 'utf-8')

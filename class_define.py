@@ -13,10 +13,11 @@ class Email:
     mail_uid = ""
     mail_pwd = ""
     mail_from = ""
+    mail_name = "小可爱"
     mail_to = ""
 
     def __init__(self, mail_uid, mail_pwd, mail_to):
         self.mail_uid = mail_uid
         self.mail_pwd = mail_pwd
-        self.mail_from = str(self.mail_uid) + " <" + str(self.mail_uid) + ">"
+        self.mail_from = str(self.mail_name) + " <" + str(self.mail_uid) + ">"
         self.mail_to = mail_to
