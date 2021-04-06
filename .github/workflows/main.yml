@@ -6,7 +6,7 @@ on:
       - main
       - auto_report
   schedule:
-    - cron: '40 15 * * *'
+    - cron: '0 16 * * *'
 
 jobs:
   build:
