@@ -78,7 +78,7 @@ try:
         # 如果未打卡则执行打卡操作
         browser.find_element_by_xpath('//*[@id="bak_0"]/div[13]/div[5]/div[4]/span').click()
         # 跳转到提交页面并点击打卡按钮
-        browser.find_element_by_xpath('//*[@id="bak_0"]/div[7]/div[2]/div[2]/div[6]/div[4]').click()
+        browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[6]/div[4]').click()
         email_message = "今日自动打卡成功！"
 
 except Exception as err:
