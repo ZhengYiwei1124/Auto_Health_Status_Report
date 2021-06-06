@@ -43,8 +43,8 @@ def send(content):
 
 # 设置不显示浏览器窗口
 chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--no-sandbox")
+# chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--no-sandbox")
 
 # 打开健康打卡系统页面
 browser = webdriver.Chrome(options=chrome_options)
@@ -54,6 +54,11 @@ browser.get("https://jksb.v.zzu.edu.cn/vls6sss/zzujksb.dll/first0")
 print("zzu打卡系统已开启，正在填写账号密码...")
 
 try:
+    # 安全进入网站
+    browser.implicitly_wait(10)
+    browser.find_element_by_xpath('//*[@id="details-button"]').click()
+    browser.implicitly_wait(10)
+    browser.find_element_by_xpath('//*[@id="proceed-link"]').click()
 
     # 填写用户名和密码并登陆
     browser.find_element_by_name("uid").send_keys(user.uid)
