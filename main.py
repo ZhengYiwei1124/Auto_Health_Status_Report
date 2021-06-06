@@ -43,8 +43,8 @@ def send(content):
 
 # 设置不显示浏览器窗口
 chrome_options = Options()
-# chrome_options.add_argument("--headless")
-# chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--no-sandbox")
 
 # 打开健康打卡系统页面
 browser = webdriver.Chrome(options=chrome_options)
